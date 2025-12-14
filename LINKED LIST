@@ -19,7 +19,6 @@ class LinkedList {
 public:
     LinkedList(): head(nullptr) {}
 
-    // Insert at beginning -> O(1)
     void insert(int value) {
         LLNode* node = new LLNode(value);
         node->next = head;
@@ -27,7 +26,7 @@ public:
         cout << value << " inserted\n";
     }
 
-    // Search -> O(n)
+    
     bool search(int value) {
         LLNode* cur = head;
         while (cur) {
@@ -37,7 +36,7 @@ public:
         return false;
     }
 
-    // Delete first occurrence -> O(n)
+    
     void remove(int value) {
         if (!head) {
             cout << value << " not found (empty list)\n";
@@ -87,15 +86,15 @@ int main() {
     ll.insert(20);
     ll.insert(30);
 
-    ll.display();                   // 30 -> 20 -> 10
+    ll.display();                 
 
     cout << "Search 20: " << (ll.search(20) ? "Found" : "Not found") << "\n";
     cout << "Search 40: " << (ll.search(40) ? "Found" : "Not found") << "\n";
 
     ll.remove(20);
-    ll.display();                   // 30 -> 10
+    ll.display();                   
 
-    ll.remove(50);                  // Not found
+    ll.remove(50);                  
 
     return 0;
 }
